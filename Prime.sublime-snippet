@@ -1,0 +1,22 @@
+<snippet>
+    <content><![CDATA[
+const int PRIME_SIZE = ${1:100001};
+vector<int> pri;
+bitset<PRIME_SIZE> isPrime;
+
+void getPrime() {
+	isPrime[0] = isPrime[1] = 1;
+	for(int i=4;i<PRIME_SIZE;i+=2) isPrime[i] = 1;
+	pri.emplace_back(2);
+	for(int i=3;i<PRIME_SIZE;i+=2) {
+		if(isPrime[i]) continue;
+		for(int j=i+i;j<PRIME_SIZE;j+=i) isPrime[j] = 1;
+		pri.emplace_back(i);
+	}
+	isPrime.flip();
+}$0
+]]></content>
+    <tabTrigger>Prime</tabTrigger>
+    <scope>source.c++</scope>
+    <description>prime numbers</description>
+</snippet>

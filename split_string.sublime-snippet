@@ -1,0 +1,14 @@
+<snippet>
+    <content><![CDATA[
+void split(string &line, vector<string> &tokens) {      
+    stringstream iss(line);
+    string item;
+    while(getline(iss, item, ' ')) { 
+        tokens.push_back(item); 
+    }
+}
+]]></content>
+    <tabTrigger>split_string</tabTrigger>
+    <scope>source.c++</scope>
+    <description>Split string into vector</description>
+</snippet>

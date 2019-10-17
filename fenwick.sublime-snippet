@@ -1,0 +1,43 @@
+<snippet>
+    <content><![CDATA[
+#define SIZE ${1:100000}
+
+typedef int MYTYPE;
+
+struct FenwickTree {
+	vector<MYTYPE> v;
+	int len;
+
+	explicit FenwickTree(int len = SIZE) : len(len) {
+		v.assign(len + 1, 0);
+	}
+
+	void update(int, MYTYPE);
+	MYTYPE query(int, int);
+	MYTYPE query(int);
+};
+
+void FenwickTree::update(int i, MYTYPE val) {
+	while(i <= len) {
+		v[i] += val;
+		i += i & (-i);
+	}
+}
+
+MYTYPE FenwickTree::query(int l, int r) {
+	return query(r) - query(l-1);
+}
+
+MYTYPE FenwickTree::query(int i) {
+	MYTYPE ret = 0;
+	while(i > 0) {
+		ret += v[i];
+		i -= i & (-i);
+	}
+	return ret;
+}$0
+]]></content>
+    <tabTrigger>fenwick</tabTrigger>
+    <scope>source.c++</scope>
+    <description>Fenwick Tree</description>
+</snippet>

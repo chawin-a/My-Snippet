@@ -1,0 +1,15 @@
+<snippet>
+    <content><![CDATA[
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	srand (time(NULL));
+	// use rand() to random value
+	${1:// EDIT HERE}
+}
+]]></content>
+    <tabTrigger>generator</tabTrigger>
+    <scope>source.c++</scope>
+    <description>generator for stress</description>
+</snippet>

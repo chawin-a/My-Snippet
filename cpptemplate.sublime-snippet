@@ -1,0 +1,29 @@
+<snippet>
+    <content><![CDATA[
+#include <bits/stdc++.h>
+
+#define DB(x) cerr << __LINE__ << ": " << #x << " = " << (x) << endl
+
+using namespace std;
+
+typedef long long LL;
+typedef unsigned long long ULL;
+typedef pair<int, int> PII;
+typedef tuple<int, int, int> TP;
+typedef vector<int> VI;
+typedef double T;
+typedef vector<T> VT;
+typedef vector<VT> VVT;
+
+const LL MOD = 1e9 + 7;
+const double EPS = 1e-10;
+mt19937 rng(7); // random generator using 7 for seed
+
+int main() {
+	$1
+}
+]]></content>
+    <tabTrigger>cpptemplate</tabTrigger>
+    <scope>source.c++</scope>
+    <description>Template CPP for Competitive</description>
+</snippet>
